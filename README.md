@@ -1,13 +1,17 @@
 # Apartment::Activejob
 
-ActiveJob support for Apartment
+ActiveJob support for Apartment with Que support
+
+All credit goes to the original gem [apartment-activejob](https://github.com/influitive/apartment-activejob)
+
+I have only added support for using this with [Que](https://github.com/chanks/que).
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'apartment-activejob'
+gem 'apartment-activejob-que'
 ```
 
 And then execute:
@@ -16,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install apartment-activejob
+    $ gem install apartment-activejob-que
 
 ## Usage
 
@@ -29,6 +33,8 @@ end
 ```
 
 You will need to restart your rails server for this to take effect.
+
+Enqueuing jobs will automatically place them in the public tenant. When the job is worked, it will be worked on the tenant it was created on.
 
 ## Contributing
 
