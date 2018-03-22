@@ -27,6 +27,8 @@ Or install it yourself as:
 Create a new initialization file active_job.rb in your project with the contents
 
 ```ruby
+require "apartment/active_job"
+
 class ActiveJob::Base
   include Apartment::ActiveJob
 end
