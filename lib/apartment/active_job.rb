@@ -10,14 +10,14 @@ module Apartment
       end
     end
 
-    def initialize(*arguments)
+    def initialize(*_args, **_kargs)
       @tenant = Apartment::Tenant.current
-      super(*arguments)
+      super
     end
 
-    def enqueue(*arguments)
+    def enqueue(*_args, **_kargs)
       Apartment::Tenant.switch('public') do
-        super(*arguments)
+        super
       end
     end
 
